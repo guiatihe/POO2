@@ -9,11 +9,27 @@ package poo2salao;
  *
  * @author baroni
  */
-public class Atendente extends Usuario{
+public class Atendente extends Usuario implements Assalariado{
     private float salario_mensal;
     
     public Atendente(String u_id, String s, String n, int i, String e, String t, int na, float sm){
         super(u_id, s, n, i, e, t, na);
         this.salario_mensal = sm;
+    }
+    @Override
+    public void mensagem(){
+        if(this.sexo == 'H'){
+            System.out.printf("Bem vindo proprietário %s!\n", this.nome);
+        }
+        else{
+            System.out.printf("Bem vinda proprietária %s!\n", this.nome);
+        }
+    }
+    public float get_salario_mensal(){
+        return this.salario_mensal;
+    }
+    @Override
+    public String get_salario(){
+        return salario_mensal + " reais por mês";
     }
 }

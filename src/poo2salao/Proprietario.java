@@ -9,7 +9,7 @@ package poo2salao;
  *
  * @author baroni
  */
-public class Proprietario extends Usuario{
+public class Proprietario extends Usuario implements Assalariado{
     private float salario_anual;
     
     public Proprietario(String u_id, String s, String n, int i, String e, String t, int na, float si){
@@ -25,7 +25,11 @@ public class Proprietario extends Usuario{
             System.out.printf("Bem vinda proprietária %s!\n", this.nome);
         }
     }
-    public float get_salario(){
+    public float get_salario_anual(){
         return salario_anual;
+    }
+    @Override
+    public String get_salario(){
+        return salario_anual + " reais por ano";
     }
 }
