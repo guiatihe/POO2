@@ -62,4 +62,10 @@ public class Usuario {
     public int get_nivel(){
         return nivel_acesso;
     }
+    public char get_sexo(){
+        return sexo;
+    }
+    public String get_senha(){
+        return senha;
+    }
 }
