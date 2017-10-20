@@ -39,9 +39,9 @@ public class Controle {
     
     public boolean login(String usuario, String senha){
         Arquivo usr = new Arquivo("usuarios");
-        ArrayList<String> arq = usr.let();
-        for(int i = 0; i < lista2.size(); i+=8){
-            if(arq.get(i).equals(tl) && arq.get(i+1).equals(ts)){
+        ArrayList<String> arq = usr.ler();
+        for(int i = 0; i < arq.size(); i+=8){
+            if(arq.get(i).equals(usuario) && arq.get(i+1).equals(senha)){
                 return true;
             }
         }
