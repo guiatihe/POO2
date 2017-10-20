@@ -166,4 +166,55 @@ public class Controle {
         }
         return false;
     }
+    public boolean adicionarComanda(String cpfCliente){
+        comandas.add(new Comanda(cpfCliente));
+        return true;
+    }
+    public boolean adicionarItemComanda(long id, String produto, int qtd, double valor){
+        int cont;
+        for(cont=0;cont<comandas.size(); cont++){
+            if(comandas.get(cont).get_id() == id){
+                comandas.get(cont).add(produto, qtd, valor);
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean removerItemComanda(long id, String produto){
+        int cont;
+        for(cont=0;cont<comandas.size(); cont++){
+            if(comandas.get(cont).get_id() == id){
+                if(comandas.get(cont).remove(produto))
+                    return true;
+            }
+        }
+        return false;
+    }
+    public Comanda exibirComanda(long id){
+        int n=0;
+        int cont;
+        for(cont=0;cont<comandas.size(); cont++){
+            if(comandas.get(cont).get_id() == id){
+                n = cont;
+                break;
+            }
+        }
+        return comandas.get(n);
+    }
+    public ArrayList<Comanda> exibirComandas(){
+        return comandas;
+    }
+    public boolean fecharComanda(long id){
+        return true; // nao terminado
+    }
+    public boolean excluirComanda(long id){
+        int cont;
+        for(cont=0;cont<comandas.size(); cont++){
+            if(comandas.get(cont).get_id() == id){
+                comandas.remove(comandas.get(cont));
+                return true;
+            }
+        }
+        return false;
+    }
 }

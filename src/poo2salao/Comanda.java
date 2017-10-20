@@ -14,9 +14,9 @@ public class Comanda {
     private boolean status;
     private long id;
     private String idCliente;
-    private double valorFinal = 0;
+    private double valorFinal;
     private ArrayList<String> produtos = new ArrayList();
-    private ArrayList<Long> valores = new ArrayList();
+    private ArrayList<Double> valores = new ArrayList<Double>();
     
     public long get_id(){
         return id;
@@ -30,7 +30,7 @@ public class Comanda {
     public ArrayList<String> get_produtos(){
         return produtos;
     }
-    public ArrayList<Long> get_valores(){
+    public ArrayList<Double> get_valores(){
         return valores;
     }
     public Comanda(String c){
@@ -38,15 +38,16 @@ public class Comanda {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	long x = timestamp.getTime();
         this.id = x;
+        this.valorFinal = 0;
         this.status = true;
     }
     public void fechar_comanda(){
         this.status = false;
     }
-    public void incValorFinal (long v) {
+    public void incValorFinal (double v) {
         this.valorFinal += v;
     }
-    public boolean add(String p, int q, long v){
+    public boolean add(String p, int q, double v){
         for(int i = 0; i < q; i++) {
             this.produtos.add(p);
             this.valores.add(v);
