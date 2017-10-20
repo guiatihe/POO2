@@ -19,14 +19,14 @@ public class Usuario {
     protected String telefone;
     protected int nivel_acesso; // 1 - proprietario, 2 - atendente, 3 - funcionario
     
-    public Usuario(String u_id, String s, String n, int i, String e, String t, int na){
+    public Usuario(String u_id, String s, String n, int i, String e, String t){
         this.id = u_id;
         this.senha = s;
         this.nome = n;
         this.idade = i;
         this.endereco = e;
         this.telefone = t;
-        this.nivel_acesso = na;
+        this.nivel_acesso = 0;
     }
     public void mensagem(){
         if(this.sexo == 'H'){

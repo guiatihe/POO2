@@ -16,7 +16,7 @@ public class Servico {
 
     private long codigo;
     private boolean status;
-    private int funcionario;
+    private String idFuncionario;
     private int dia;
     private int mes;
     private int ano;
@@ -28,9 +28,9 @@ public class Servico {
         this.status = false;
     }
     
-    public Servico(int func, int d, int m, int a, int h, String serv, String cpf){
+    public Servico(String func, int d, int m, int a, int h, String serv, String cpf){
         this.status = true;
-        this.funcionario = func;
+        this.idFuncionario = func;
         this.dia = d;
         this.mes = m;
         this.ano = a;
@@ -46,8 +46,8 @@ public class Servico {
         this.status = false;
     }
     
-    public int get_funcionario(){
-        return funcionario;
+    public String get_funcionario(){
+        return idFuncionario;
     }
     
     public int get_dia(){

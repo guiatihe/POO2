@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class Agenda {
     
     private ArrayList<Servico> servicos = new ArrayList();
-    private int funcionario;
+    private String funcionario;
     
-    public Agenda(int func){
+    public Agenda(String func){
         this.funcionario = func;
     }
     
-    public boolean adicionar_servico(int func, int d, int m, int a, int h, String serv, String cpf){
+    public boolean adicionarServico(String func, int d, int m, int a, int h, String serv, String cpf){
         if(this.status_horario(d, m, a, h)){
             Servico novo_serv = new Servico(func, d, m, a, h, serv, cpf);
             return true;
@@ -75,6 +75,9 @@ public class Agenda {
             }
         }
         return false;
+    }
+    public String getFuncionario(){
+        return funcionario;
     }
     
 }

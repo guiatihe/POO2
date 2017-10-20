@@ -11,60 +11,76 @@ import java.util.ArrayList;
  * @author baroni
  */
 public class Comanda {
+    private boolean status;
     private long id;
     private String idCliente;
     private double valorFinal = 0;
-    private ArrayList<String> produto = new ArrayList();
-    private ArrayList<Long> valor = new ArrayList();
+    private ArrayList<String> produtos = new ArrayList();
+    private ArrayList<Long> valores = new ArrayList();
     
+    public long get_id(){
+        return id;
+    }
+    public String get_idCliente(){
+        return idCliente;
+    }
+    public double get_valorFinal(){
+        return valorFinal;
+    }
+    public ArrayList<String> get_produtos(){
+        return produtos;
+    }
+    public ArrayList<Long> get_valores(){
+        return valores;
+    }
     public Comanda(String c){
         this.idCliente = c;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	long x = timestamp.getTime();
         this.id = x;
+        this.status = true;
     }
-    
+    public void fechar_comanda(){
+        this.status = false;
+    }
     public void incValorFinal (long v) {
         this.valorFinal += v;
     }
-    
     public boolean add(String p, int q, long v){
         for(int i = 0; i < q; i++) {
-            this.produto.add(p);
-            this.valor.add(v);
+            this.produtos.add(p);
+            this.valores.add(v);
             this.incValorFinal(v);
         }
         return true;
     }
-    
     public boolean remove(int q, String p){
         int cont = 0;
-        for(int i = 0; i < produto.size(); i++) {
-            if(p.equals(produto.get(i))){
+        for(int i = 0; i < produtos.size(); i++) {
+            if(p.equals(produtos.get(i))){
                 cont++;
             }
         }
         if(cont > q){
             return false;
         } else {
-            for(int i = 0; i < produto.size(); i++) {
-                if(p.equals(produto.get(i)) && cont > 0){
-                    produto.remove(i);
+            for(int i = 0; i < produtos.size(); i++) {
+                if(p.equals(produtos.get(i)) && cont > 0){
+                    produtos.remove(i);
                     cont--;
-                    this.incValorFinal(-1*valor.get(i));
-                    valor.remove(i);
+                    this.incValorFinal(-1*valores.get(i));
+                    valores.remove(i);
                 }
             } 
         } 
         return true;
     }
-    
     public boolean remove(String p){
-        for(int i = 0; i < produto.size(); i++) {
-            if(p.equals(produto.get(i))){
-                this.incValorFinal((-1)*(valor.get(i)));
-                valor.remove(i);
-                produto.remove(i);
+        for(int i = 0; i < produtos.size(); i++) {
+            if(p.equals(produtos.get(i))){
+                this.incValorFinal((-1)*(valores.get(i)));
+                valores.remove(i);
+                produtos.remove(i);
             }
         } return true;
     }
