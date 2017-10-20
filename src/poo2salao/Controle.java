@@ -5,6 +5,7 @@
  */
 package poo2salao;
 import java.util.ArrayList;
+import java.util.Scanner;  
 
 /**
  *
@@ -19,9 +20,32 @@ public class Controle {
     public Controle(){
         String ad = "admin";
         cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
+        
+        ArrayList<String> listaUsuarios = new ArrayList();
+        ArrayList<String> listaClientes = new ArrayList();
+        ArrayList<String> listaAgendas = new ArrayList();
+        ArrayList<String> listaComandas = new ArrayList();
+        ArrayList<Arquivo> arq = new ArrayList();
+        arq.add(new Arquivo("usuarios"));
+        arq.add(new Arquivo("clientes"));
+        arq.add(new Arquivo("comandas"));
+        arq.add(new Arquivo("agendas"));
+        listaUsuarios = arq.get(0).ler();
+        listaClientes = arq.get(1).ler();
+        listaComandas = arq.get(2).ler();
+        listaAgendas = arq.get(3).ler();
+        // Falta implementar funções que cadastram todos os objetos a partir do material presenta nas listas
     }
+    
     public boolean login(String usuario, String senha){
-        return false; // precisa implementar, usando arquivos
+        Arquivo usr = new Arquivo("usuarios");
+        ArrayList<String> arq = usr.let();
+        for(int i = 0; i < lista2.size(); i+=8){
+            if(arq.get(i).equals(tl) && arq.get(i+1).equals(ts)){
+                return true;
+            }
+        }
+        return false;
     }
     public int quantProprietarios(){
         int n=0;
@@ -228,6 +252,15 @@ public class Controle {
         return false;
     }
     public void sair(){
-        // salvar Lists em arquivo
+        // Por enquanto salva apenas os usuários
+        ArrayList<Arquivo> arq = new ArrayList();
+        arq.add(new Arquivo("usuarios"));
+        arq.add(new Arquivo("clientes"));
+        arq.add(new Arquivo("comandas"));
+        arq.add(new Arquivo("agendas"));
+        arq.get(0).armazenarUsuarios(usuarios);
+        arq.get(1).armazenarClientes(clientes);
+        arq.get(2).armazenarComandas(comandas);
+        arq.get(3).armazenarAgendas(agendas);
     }
 }
