@@ -20,6 +20,9 @@ public class Controle {
         String ad = "admin";
         cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
     }
+    public boolean login(String usuario, String senha){
+        return false; // precisa implementar, usando arquivos
+    }
     public int quantProprietarios(){
         int n=0;
         int cont;
@@ -205,7 +208,14 @@ public class Controle {
         return comandas;
     }
     public boolean fecharComanda(long id){
-        return true; // nao terminado
+        int cont;
+        for(cont=0;cont<comandas.size(); cont++){
+            if(comandas.get(cont).get_id() == id){
+                comandas.get(cont).fechar_comanda();
+                return true;
+            }
+        }
+        return false;
     }
     public boolean excluirComanda(long id){
         int cont;
@@ -216,5 +226,8 @@ public class Controle {
             }
         }
         return false;
+    }
+    public void sair(){
+        // salvar Lists em arquivo
     }
 }
