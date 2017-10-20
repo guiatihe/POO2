@@ -18,6 +18,9 @@ public class Comanda {
     private ArrayList<String> produtos = new ArrayList();
     private ArrayList<Double> valores = new ArrayList<Double>();
     
+    public boolean getStatus(){
+        return status;
+    }
     public long get_id(){
         return id;
     }
