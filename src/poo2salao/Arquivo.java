@@ -20,6 +20,53 @@ public class Arquivo {
     public Arquivo(String nome) {
         this.path = nome+".txt";
     }
+    
+    public void armazenarUsuarios(ArrayList<Usuario> lista) {
+        try {  
+            FileWriter escrita = new FileWriter(this.path);  
+            BufferedWriter escritor = new BufferedWriter(escrita);  
+  
+            for(int i=0;i< lista.size();i++){  
+                escritor.write(lista.get(i).get_id());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_senha());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_nome());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_idade());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_sexo());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_endereco());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_telefone());
+                escritor.newLine();
+                escritor.write(lista.get(i).get_nivel());
+                escritor.newLine();
+            }  
+              
+            escritor.flush();  
+            escritor.close();  
+            escrita.close();  
+              
+        } catch (Exception e) {  
+            System.out.println("Erro ao criar arquivo!!");  
+  
+        }  
+    }  
+    
+     public void armazenarClientes(ArrayList<Cliente> lista) {
+        
+    } 
+     
+     public void armazenarAgendas(ArrayList<Agenda> lista) {
+        
+    } 
+     
+     public void armazenarComandas(ArrayList<Comanda> lista) {
+        
+    } 
+    /*
     public void armazenar(ArrayList<String> lista) {  
         try {  
             FileWriter escrita = new FileWriter(this.path);  
@@ -38,7 +85,7 @@ public class Arquivo {
             System.out.println("Erro ao criar arquivo!!");  
   
         }  
-    }  
+    }  */
       
     public ArrayList ler() {
         try{
