@@ -12,8 +12,9 @@ package poo2salao;
 public class Proprietario extends Usuario implements Assalariado{
     private float salario_anual;
     
-    public Proprietario(String u_id, String s, String n, int i, String e, String t, int na, float si){
-        super(u_id, s, n, i, e, t, na);
+    public Proprietario(String u_id, String s, String n, int i, String e, String t, float si){
+        super(u_id, s, n, i, e, t);
+        this.nivel_acesso = 1;
         this.salario_anual = si;
     }
     @Override

@@ -12,8 +12,9 @@ package poo2salao;
 public class Atendente extends Usuario implements Assalariado{
     private float salario_mensal;
     
-    public Atendente(String u_id, String s, String n, int i, String e, String t, int na, float sm){
-        super(u_id, s, n, i, e, t, na);
+    public Atendente(String u_id, String s, String n, int i, String e, String t, float sm){
+        super(u_id, s, n, i, e, t);
+        this.nivel_acesso = 2;
         this.salario_mensal = sm;
     }
     @Override
