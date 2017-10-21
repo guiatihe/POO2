@@ -120,12 +120,13 @@ public class POO2Salao {
                 String idexcluido = scanner.nextLine();
                 controle.excluirUsuario(idexcluido);}
         }
-        else if (escolha == 3){break;}
+        else if (escolha == 3){}
         }
         
         else if(entrada == 2){
         System.out.println("1. Agendar serviço");
         System.out.println("2. Cancelar serviço");
+        System.out.println("3. Voltar");
         escolha = scanner.nextInt();
         if(escolha == 1){
         System.out.print("Insira o id do funcionário: ");
@@ -159,11 +160,12 @@ public class POO2Salao {
         
         controle.cancelarServico(idfuncionario, codigo);
         }
-        else{break;}
+        else{}
         }
         else if(entrada == 3){
         System.out.println("1. Cadastrar cliente");
         System.out.println("2. Excluir cliente");
+        System.out.println("3. Voltar");
         escolha = scanner.nextInt();
         if(escolha == 1){
         System.out.print("Insira o nome do cliente: ");
@@ -198,6 +200,7 @@ public class POO2Salao {
         String idCliente = scanner.nextLine();
         controle.excluirCliente(idCliente);
         }
+        else{}
         }
         else if(entrada == 4){
         System.out.println("1. Criar nova comanda");
@@ -209,34 +212,34 @@ public class POO2Salao {
         System.out.println("7. Voltar");
         escolha = scanner.nextInt();
         if(escolha == 1){
-            System.out.printf("Digite o CPF do cliente/n");
+            System.out.println("Digite o CPF do cliente");
             scanner.next();
             String cpfCliente = scanner.nextLine(); 
             controle.adicionarComanda(cpfCliente);
         }
         else if(escolha == 2){
-            System.out.printf("Digite o iD da comanda");
+            System.out.println("Digite o iD da comanda");
             long id = scanner.nextLong();
-            System.out.printf("Digite o serviço:/n");
+            System.out.println("Digite o serviço:");
             scanner.next();
             String produto = scanner.nextLine();
-            System.out.printf("Digite a quantidade:/n");
+            System.out.println("Digite a quantidade:");
             int qntd = scanner.nextInt();
-            System.out.printf("DIgite o valor/n");
+            System.out.println("Digite o valor");
             double valor = scanner.nextDouble();
             controle.adicionarItemComanda(id, produto, qntd, valor);
         }
         else if(escolha == 3){
             System.out.printf("Digite o ID da comanda/n");
             long id = scanner.nextLong();
-            System.out.printf("Digite o serviço/n");
+            System.out.println("Digite o serviço");
             scanner.next();
             String produto = scanner.nextLine();
             controle.removerItemComanda(id, produto);
             
         }
         else if(escolha == 4){
-            System.out.printf("Digite o ID da comanda/n");
+            System.out.println("Digite o ID da comanda");
             long id = scanner.nextLong();
             Comanda comanda = controle.exibirComanda(id);
             System.out.printf("CPF do cliente: %s - Valor: R$%lf\n",comanda.get_idCliente(),comanda.get_valorFinal());
@@ -250,23 +253,20 @@ public class POO2Salao {
             controle.excluirComanda(id);
         }
         else if(escolha == 6){
-            ArrayList<Comanda> comandas = new ArrayList();
-            comandas = controle.exibirComandas();
-            for(i=0;i<comandas.size();i++){
-                if(comandas.get(i).getStatus()){
-                    System.out.printf("Código: %l - CPF do cliente: %s - Valor: R$%lf\n",comandas.get(i).get_id(),comandas.get(i).get_idCliente(),comandas.get(i).get_valorFinal());
+            //ArrayList<Comanda> comandas = new ArrayList();
+            //comandas = controle.exibirComandas();
+            for(i=0;i<controle.exibirComandas().size();i++){
+                if(controle.exibirComandas().get(i).getStatus()){
+                    System.out.printf("Código: %l - CPF do cliente: %s - Valor: R$%lf\n",controle.exibirComandas().get(i).get_id(),controle.exibirComandas().get(i).get_idCliente(),controle.exibirComandas().get(i).get_valorFinal());
                 }
             }
         }
-        else if(escolha == 7){
-            break;
+        else if(escolha == 7){}
         }
+        
         else if(entrada == 5){
         menu = false;
         }
-        
-        }
-        
         
     }
     
