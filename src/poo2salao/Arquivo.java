@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package poo2salao;
-/*
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.Scanner;*/
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,99 +14,104 @@ import java.util.ArrayList;
  * @author baroni
  */
 public class Arquivo {
-    private static String path;
-    public Arquivo(String nome) {
-        Arquivo.path = nome+".txt";
+    //private static String path;
+    public Arquivo() {
+        //Arquivo.path = nome+".txt";
     }
     
-    public void armazenarUsuarios(ArrayList<Usuario> lista) {
-        try {
-            FileOutputStream fos = new FileOutputStream(Arquivo.path);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(lista);
-            oos.close();
-            /*FileWriter escrita = new FileWriter(Arquivo.path);  
-            //BufferedWriter escritor = new BufferedWriter(escrita);  
-  
-            for(int i=0;i< lista.size();i++){  
-                escritor.write(lista.get(i).get_id());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_senha());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_nome());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_idade());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_sexo());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_endereco());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_telefone());
-                escritor.newLine();
-                escritor.write(lista.get(i).get_nivel());
-                escritor.newLine();
-            }  
-              
-            escritor.flush();  
-            escritor.close();  
-            escrita.close();  */
-              
-        } catch (Exception e) {  
-            System.out.println("Erro ao criar arquivo!!");
-        }  
-    }  
-    
-     public void armazenarClientes(ArrayList<Cliente> lista) {
-        
-    } 
-     
-     public void armazenarAgendas(ArrayList<Agenda> lista) {
-        
-    } 
-     
-     public void armazenarComandas(ArrayList<Comanda> lista) {
-        
-    } 
-    /*
-    public void armazenar(ArrayList<String> lista) {  
-        try {  
-            FileWriter escrita = new FileWriter(this.path);  
-            BufferedWriter escritor = new BufferedWriter(escrita);  
-  
-            for(int i=0;i< lista.size();i++){  
-                escritor.write(lista.get(i));  
-                escritor.newLine();  
-            }  
-              
-            escritor.flush();  
-            escritor.close();  
-            escrita.close();  
-              
-        } catch (Exception e) {  
-            System.out.println("Erro ao criar arquivo!!");  
-  
-        }  
-    }  */
-      
-    public ArrayList lerUsuarios() {
+    public ArrayList lerUsuarios(String path) {
         try{
-            FileInputStream fis = new FileInputStream("t.tmp");
+            FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
             ArrayList<Usuario> lista = (ArrayList<Usuario>) ois.readObject();
             ois.close();
-            
-            
-            /*
-            Scanner s = new Scanner(new File(this.path));
-            ArrayList<String> list = new ArrayList<String>();
-            while (s.hasNextLine()){
-                list.add(s.nextLine());
-            }
-            s.close();*/
             return lista;
         } catch (Exception e) {  
-            System.out.println("Erro ao criar arquivo!!");  
+            System.out.println("Erro ao ler arquivo!!");  
             return null;
         }
+    }
+    
+    public ArrayList lerClientes(String path) {
+        try{
+            FileInputStream fis = new FileInputStream(path);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Cliente> lista = (ArrayList<Cliente>) ois.readObject();
+            ois.close();
+            return lista;
+        } catch (Exception e) {  
+            System.out.println("Erro ao ler arquivo!!");  
+            return null;
+        }
+    }
+    
+    public ArrayList lerComandas(String path) {
+        try{
+            FileInputStream fis = new FileInputStream(path);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Comanda> lista = (ArrayList<Comanda>) ois.readObject();
+            ois.close();
+            return lista;
+        } catch (Exception e) {  
+            System.out.println("Erro ao ler arquivo!!");  
+            return null;
+        }
+    }
+    
+    public ArrayList lerAgendas(String path) {
+        try{
+            FileInputStream fis = new FileInputStream(path);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Agenda> lista = (ArrayList<Agenda>) ois.readObject();
+            ois.close();
+            return lista;
+        } catch (Exception e) {  
+            System.out.println("Erro ao ler arquivo!!");  
+            return null;
+        }
+    }
+
+    void armUsuarios(ArrayList<Usuario> lista, String path) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            oos.close();
+        } catch (Exception e) {  
+            System.out.println("Erro ao aramzenar arquivo!!");
+        } 
+    }
+
+    void armClientes(ArrayList<Cliente> lista, String path) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            oos.close();
+        } catch (Exception e) {  
+            System.out.println("Erro ao aramzenar arquivo!!");
+        } 
+    }
+
+    void armComandas(ArrayList<Comanda> lista, String path) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            oos.close();
+        } catch (Exception e) {  
+            System.out.println("Erro ao aramzenar arquivo!!");
+        } 
+    }
+
+    void armAgendas(ArrayList<Agenda> lista, String path) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            oos.close();
+        } catch (Exception e) {  
+            System.out.println("Erro ao aramzenar arquivo!!");
+        } 
     }
 }

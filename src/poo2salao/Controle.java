@@ -20,28 +20,16 @@ public class Controle {
     public Controle(){
         String ad = "admin";
         cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
-        
-        ArrayList<String> listaUsuarios = new ArrayList();
-        ArrayList<String> listaClientes = new ArrayList();
-        ArrayList<String> listaAgendas = new ArrayList();
-        ArrayList<String> listaComandas = new ArrayList();
-        ArrayList<Arquivo> arq = new ArrayList();
-        arq.add(new Arquivo("usuarios"));
-        arq.add(new Arquivo("clientes"));
-        arq.add(new Arquivo("comandas"));
-        arq.add(new Arquivo("agendas"));
-        listaUsuarios = arq.get(0).ler();
-        listaClientes = arq.get(1).ler();
-        listaComandas = arq.get(2).ler();
-        listaAgendas = arq.get(3).ler();
-        // Falta implementar funções que cadastram todos os objetos a partir do material presenta nas listas
+        Arquivo arq = new Arquivo();
+        usuarios = arq.lerUsuarios("usuarios.txt");
+        clientes = arq.lerClientes("clientes.txt");
+        comandas = arq.lerComandas("comandas.txt");
+        agendas = arq.lerAgendas("agendas.txt");
     }
     
     public boolean login(String usuario, String senha){
-        Arquivo usr = new Arquivo("usuarios");
-        ArrayList<String> arq = usr.ler();
-        for(int i = 0; i < arq.size(); i+=8){
-            if(arq.get(i).equals(usuario) && arq.get(i+1).equals(senha)){
+        for(int i = 0; i < usuarios.size(); i+=8){
+            if(usuarios.get(i).equals(usuario) && usuarios.get(i+1).equals(senha)){
                 return true;
             }
         }
@@ -253,14 +241,10 @@ public class Controle {
     }
     public void sair(){
         // Por enquanto salva apenas os usuários
-        ArrayList<Arquivo> arq = new ArrayList();
-        arq.add(new Arquivo("usuarios"));
-        arq.add(new Arquivo("clientes"));
-        arq.add(new Arquivo("comandas"));
-        arq.add(new Arquivo("agendas"));
-        arq.get(0).armazenarUsuarios(usuarios);
-        arq.get(1).armazenarClientes(clientes);
-        arq.get(2).armazenarComandas(comandas);
-        arq.get(3).armazenarAgendas(agendas);
+        Arquivo arq = new Arquivo();
+        arq.armUsuarios(usuarios, "usuarios.txt");
+        arq.armClientes(clientes, "clientes.txt");
+        arq.armComandas(comandas, "comandas.txt");
+        arq.armAgendas(agendas, "agendas.txt");
     }
 }
