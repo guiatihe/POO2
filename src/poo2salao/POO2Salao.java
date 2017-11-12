@@ -265,6 +265,7 @@ public class POO2Salao {
         }
         
         else if(entrada == 5){
+            controle.sair();
         menu = false;
         }
         

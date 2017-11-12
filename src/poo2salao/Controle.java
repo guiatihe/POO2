@@ -12,14 +12,14 @@ import java.util.Scanner;
  * @author Gustavo
  */
 public class Controle {
-    private ArrayList<Usuario> usuarios = new ArrayList();
-    private ArrayList<Cliente> clientes = new ArrayList();
-    private ArrayList<Comanda> comandas = new ArrayList();
-    private ArrayList<Agenda> agendas = new ArrayList();
+    private ArrayList<Usuario> usuarios;
+    private ArrayList<Cliente> clientes;
+    private ArrayList<Comanda> comandas;
+    private ArrayList<Agenda> agendas;
     
     public Controle(){
-        String ad = "admin";
-        cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
+        //String ad = "admin";
+        //cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
         Arquivo arq = new Arquivo();
         usuarios = arq.lerUsuarios("usuarios.txt");
         clientes = arq.lerClientes("clientes.txt");
