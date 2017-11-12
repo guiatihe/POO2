@@ -5,11 +5,13 @@
  */
 package poo2salao;
 
+import java.io.Serializable;
+
 /**
  *
  * @author baroni
  */
-public class Usuario {
+public class Usuario implements Serializable {
     protected String id; // CPF
     protected String senha;
     protected String nome;

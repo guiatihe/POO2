@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 package poo2salao;
-
+/*
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;*/
+
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 /**
  *
@@ -18,13 +21,17 @@ import java.util.Scanner;
 public class Arquivo {
     private static String path;
     public Arquivo(String nome) {
-        this.path = nome+".txt";
+        Arquivo.path = nome+".txt";
     }
     
     public void armazenarUsuarios(ArrayList<Usuario> lista) {
-        try {  
-            FileWriter escrita = new FileWriter(this.path);  
-            BufferedWriter escritor = new BufferedWriter(escrita);  
+        try {
+            FileOutputStream fos = new FileOutputStream(Arquivo.path);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            oos.close();
+            /*FileWriter escrita = new FileWriter(Arquivo.path);  
+            //BufferedWriter escritor = new BufferedWriter(escrita);  
   
             for(int i=0;i< lista.size();i++){  
                 escritor.write(lista.get(i).get_id());
@@ -47,11 +54,10 @@ public class Arquivo {
               
             escritor.flush();  
             escritor.close();  
-            escrita.close();  
+            escrita.close();  */
               
         } catch (Exception e) {  
-            System.out.println("Erro ao criar arquivo!!");  
-  
+            System.out.println("Erro ao criar arquivo!!");
         }  
     }  
     
@@ -87,15 +93,22 @@ public class Arquivo {
         }  
     }  */
       
-    public ArrayList ler() {
+    public ArrayList lerUsuarios() {
         try{
+            FileInputStream fis = new FileInputStream("t.tmp");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Usuario> lista = (ArrayList<Usuario>) ois.readObject();
+            ois.close();
+            
+            
+            /*
             Scanner s = new Scanner(new File(this.path));
             ArrayList<String> list = new ArrayList<String>();
             while (s.hasNextLine()){
                 list.add(s.nextLine());
             }
-            s.close();
-            return list;
+            s.close();*/
+            return lista;
         } catch (Exception e) {  
             System.out.println("Erro ao criar arquivo!!");  
             return null;
