@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package poo2salao;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 /**
  *
  * @author baroni
  */
-public class Comanda {
+public class Comanda implements Serializable {
     private boolean status;
     private long id;
     private String idCliente;

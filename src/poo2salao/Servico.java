@@ -5,6 +5,7 @@
  */
 package poo2salao;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -12,7 +13,7 @@ import java.text.SimpleDateFormat;
  *
  * @author baroni
  */
-public class Servico {
+public class Servico implements Serializable{
 
     private long codigo;
     private boolean status;

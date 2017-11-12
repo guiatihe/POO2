@@ -7,8 +7,6 @@ package poo2salao;
 
 import java.io.*;
 import java.util.ArrayList;
-
-
 /**
  *
  * @author baroni

@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package poo2salao;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author baroni
  */
-public class Agenda {
+public class Agenda implements Serializable {
     
     private ArrayList<Servico> servicos = new ArrayList();
     private String funcionario;

@@ -5,11 +5,13 @@
  */
 package poo2salao;
 
+import java.io.Serializable;
+
 /**
  *
  * @author baroni
  */
-public class Cliente {
+public class Cliente implements Serializable {
     private String id; //CPF
     private String nome;
     private char sexo;
