@@ -25,6 +25,36 @@ public class ListUsFrame extends javax.swing.JFrame {
     public void setNivel(int n){
         this.nivelAcesso = n;
     }
+    
+    public void refresh(){
+        Controle acao = new Controle();
+        if("Nome".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getUsuarios().get(index).get_nome());
+        }
+        else if("ID".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getUsuarios().get(index).get_id());
+        }
+        else if("Nível".equals(jComboBox1.getSelectedItem())){
+            if(acao.getUsuarios().get(index).get_nivel() == 1){
+                jLabel2.setText("1 - Proprietário");
+            }
+            if(acao.getUsuarios().get(index).get_nivel() == 2){
+                jLabel2.setText("2 - Atendente");
+            }
+            if(acao.getUsuarios().get(index).get_nivel() == 3){
+                jLabel2.setText("3 - Funcionário");
+            }
+        }
+        else if("Telefone".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getUsuarios().get(index).get_telefone());
+        }
+        else if("Endereço".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getUsuarios().get(index).get_endereco());
+        }
+        else if("Idade".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(Integer.toString(acao.getUsuarios().get(index).get_idade()));
+        }
+    }
     /**
      * Creates new form ListUsFrame
      */
@@ -33,7 +63,6 @@ public class ListUsFrame extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.index = 0;
         Controle acao = new Controle();
-        System.out.println("TESTE");
         jLabel2.setText(acao.getUsuarios().get(index).get_nome());
     }
 
@@ -59,15 +88,35 @@ public class ListUsFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Listar usuários");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "ID", "Nível", "Telefone", "Endereço", "Idade", "Sexo", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "ID", "Nível", "Telefone", "Endereço", "Idade", " " }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton1.setText(">");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Voltar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,6 +158,28 @@ public class ListUsFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        this.refresh();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.index++;
+        this.refresh();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.index--;
+        this.refresh();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        UsuariosFrame usuarios = new UsuariosFrame();
+        usuarios.setUsuario(this.usuario);
+        usuarios.setNivel(this.nivelAcesso);
+        usuarios.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
