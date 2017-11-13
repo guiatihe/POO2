@@ -52,8 +52,10 @@ public class Controle {
                 return false;
             }
         }
+        
         Proprietario novo_u = new Proprietario(u_id, s, n, i, e, t, si);
         usuarios.add(novo_u);
+        System.out.println(usuarios.size());
         return true;
     }
     public boolean excluirProprietario(String id){

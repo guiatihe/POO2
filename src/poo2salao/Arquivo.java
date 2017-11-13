@@ -25,7 +25,7 @@ public class Arquivo {
             ois.close();
             return lista;
         } catch (Exception e) {  
-            System.out.println("Erro ao ler arquivo. Se esta for a primeira execução, ignore este erro!");  
+            System.out.println("Erro ao ler usuarios. Se esta for a primeira execução, ignore este erro!");  
             return new ArrayList();
         }
     }
