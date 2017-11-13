@@ -235,6 +235,7 @@ public class CadUsFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Controle acao = new Controle();
         acao.cadastrarProprietario(jTextField2.getText().toString(), jTextField7.getText().toString(), jTextField1.getText().toString(), Integer.parseInt(jTextField4.getText()), jTextField6.getText().toString(), jTextField5.getText().toString(), Float.parseFloat(jTextField3.getText()));
+        acao.adicionarAgenda(jTextField2.getText().toString());
         UsuariosFrame usuarios = new UsuariosFrame();
         usuarios.setUsuario(this.usuario);
         usuarios.setNivel(this.nivelAcesso);

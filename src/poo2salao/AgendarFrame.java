@@ -238,7 +238,8 @@ public class AgendarFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        Controle acao = new Controle();
+        acao.adicionarServico(usuario, WIDTH, WIDTH, ABORT, WIDTH, usuario, usuario);
         ServFrame servicos = new ServFrame();
         servicos.setUsuario(this.usuario);
         servicos.setNivel(this.nivelAcesso);
