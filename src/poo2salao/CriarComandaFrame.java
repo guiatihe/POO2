@@ -7,11 +7,10 @@ package poo2salao;
 
 /**
  *
- * @author Gustavo
+ * @author g.atihe
  */
-public class ClientesFrame extends javax.swing.JFrame {
-    
-    private String usuario;
+public class CriarComandaFrame extends javax.swing.JFrame {
+ private String usuario;
     private int nivelAcesso;
     
     public void setUsuario(String u){
@@ -22,11 +21,10 @@ public class ClientesFrame extends javax.swing.JFrame {
         this.nivelAcesso = n;
     }
     /**
-     * Creates new form ClientesFrame
+     * Creates new form CriarComandaFrame
      */
-    public ClientesFrame() {
+    public CriarComandaFrame() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -39,7 +37,6 @@ public class ClientesFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,20 +69,20 @@ public class ClientesFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClientesFrame().setVisible(true);
+                new CriarComandaFrame().setVisible(true);
             }
         });
     }

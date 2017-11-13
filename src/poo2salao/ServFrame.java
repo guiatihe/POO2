@@ -137,16 +137,16 @@ public class ServFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //if(this.nivelAcesso == 1 || this.nivelAcesso == 2){
+        if(this.nivelAcesso == 1 || this.nivelAcesso == 2){
             CancelarAgenFrame cancelar = new CancelarAgenFrame();
             cancelar.setNivel(this.nivelAcesso);
         cancelar.setUsuario(this.usuario);
         cancelar.setVisible(true);
         dispose();
-        //}
-        //else{
-          //  JOptionPane.showMessageDialog(this, "Você não tem a permissão necessária para executar a ação solicitada!");
-        //}
+        }
+        else{
+          JOptionPane.showMessageDialog(this, "Você não tem a permissão necessária para executar a ação solicitada!");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
