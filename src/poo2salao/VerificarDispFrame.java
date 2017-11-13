@@ -123,7 +123,7 @@ public class VerificarDispFrame extends javax.swing.JFrame {
                 {"23h", null, null, null}
             },
             new String [] {
-                "Horário", "", "", "Disponível"
+                "Horário", "Cliente", "ID do Serviço", "Disponível"
             }
         ) {
             Class[] types = new Class [] {
