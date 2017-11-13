@@ -127,6 +127,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         ClientesFrame clientes = new ClientesFrame();
+        clientes.setUsuario(this.usuario);
+        clientes.setNivel(this.nivelAcesso);
         clientes.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
