@@ -32,7 +32,9 @@ public class ListUsFrame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.index = 0;
-        jLabel2.setText("Teste");
+        Controle acao = new Controle();
+        System.out.println("TESTE");
+        jLabel2.setText(acao.getUsuarios().get(index).get_nome());
     }
 
     /**
