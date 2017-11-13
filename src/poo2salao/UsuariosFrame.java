@@ -126,6 +126,8 @@ public class UsuariosFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(this.nivelAcesso == 1){
             CadUsFrame cadus = new CadUsFrame();
+            cadus.setUsuario(this.usuario);
+            cadus.setNivel(this.nivelAcesso);
             cadus.setVisible(true);
             dispose();
         }
