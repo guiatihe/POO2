@@ -27,9 +27,9 @@ public class Controle {
         //System.out.println(clientes.get(0).getNome());
     }
     
-    public boolean login(String usuario, String senha){
+    public boolean login(String _usuario, String _senha){
         for(int i = 0; i < usuarios.size(); i+=8){
-            if(usuarios.get(i).equals(usuario) && usuarios.get(i+1).equals(senha)){
+            if( (_usuario.equals(usuarios.get(i).get_id())) && (_senha.equals(usuarios.get(i).get_senha())) ){
                 return true;
             }
         }
