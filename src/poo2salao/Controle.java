@@ -5,8 +5,7 @@
  */
 package poo2salao;
 import java.util.ArrayList;
-import java.util.Scanner;  
-
+import java.util.Scanner;
 /**
  *
  * @author Gustavo
@@ -25,6 +24,8 @@ public class Controle {
         clientes = arq.lerClientes("clientes.txt");
         comandas = arq.lerComandas("comandas.txt");
         agendas = arq.lerAgendas("agendas.txt");
+        
+        //System.out.println(clientes.get(0).getNome());
     }
     
     public boolean login(String usuario, String senha){

@@ -5,11 +5,13 @@
  */
 package poo2salao;
 
+import java.io.Serializable;
+
 /**
  *
  * @author baroni
  */
-public class Proprietario extends Usuario implements Assalariado{
+public class Proprietario extends Usuario implements Assalariado, Serializable{
     private float salario_anual;
     
     public Proprietario(String u_id, String s, String n, int i, String e, String t, float si){

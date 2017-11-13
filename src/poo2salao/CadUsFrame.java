@@ -238,6 +238,7 @@ public class CadUsFrame extends javax.swing.JFrame {
         usuarios.setUsuario(this.usuario);
         usuarios.setNivel(this.nivelAcesso);
         usuarios.setVisible(true);
+        acao.sair();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
