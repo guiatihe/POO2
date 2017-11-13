@@ -197,6 +197,12 @@ public class ExcUsFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Controle acao = new Controle();
         acao.getUsuarios().get(index).get_nome();
+        if(acao.getUsuarios().get(index).get_nivel() == 1){
+            acao.excluirProprietario(acao.getUsuarios().get(index).get_id());
+        }
+        else{
+            acao.excluirUsuario(acao.getUsuarios().get(index).get_id());
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
