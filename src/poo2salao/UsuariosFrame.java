@@ -138,6 +138,8 @@ public class UsuariosFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         ListUsFrame listus = new ListUsFrame();
+        listus.setUsuario(this.usuario);
+        listus.setNivel(this.nivelAcesso);
         listus.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

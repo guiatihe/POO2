@@ -252,8 +252,14 @@ public class CadUsFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        if(jComboBox2.getItemCount() == 1){
-            System.out.println("VAMO");
+        if("1".equals(jComboBox2.getSelectedItem())){
+            jLabel10.setText("Salário anual:");
+        }
+        else if("2".equals(jComboBox2.getSelectedItem())){
+            jLabel10.setText("Salário mensal:");
+        }
+        else if("3".equals(jComboBox2.getSelectedItem())){
+            jLabel10.setText("Porcentagem do serviço:");
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 

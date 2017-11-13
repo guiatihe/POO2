@@ -13,6 +13,16 @@ import java.util.ArrayList;
  */
 public class ListUsFrame extends javax.swing.JFrame {
 
+    private String usuario;
+    private int nivelAcesso;
+    
+    public void setUsuario(String u){
+        this.usuario = u;
+    }
+    
+    public void setNivel(int n){
+        this.nivelAcesso = n;
+    }
     /**
      * Creates new form ListUsFrame
      */
@@ -30,44 +40,22 @@ public class ListUsFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listar Usuários");
-
-        jLabel1.setText("jLabel1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jLabel1)
-                .addContainerGap(187, Short.MAX_VALUE))
+            .addGap(0, 437, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1)
-                .addContainerGap(213, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-        Controle teste = new Controle();
-        ArrayList<Usuario> usuarios = new ArrayList();
-        usuarios = teste.getUsuarios();
-        jLabel1.setText("1: "+usuarios.get(0).get_nome());
-    }//GEN-LAST:event_jLabel1MouseEntered
 
     /**
      * @param args the command line arguments
@@ -105,6 +93,5 @@ public class ListUsFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
