@@ -7,14 +7,25 @@ package poo2salao;
 
 /**
  *
- * @author Gustavo
+ * @author g.atihe
  */
-public class ServicosFrame extends javax.swing.JFrame {
+public class CancelarAgenFrame extends javax.swing.JFrame {
+    
+    private String usuario;
+        private int nivelAcesso;
+        
+        public void setNivel(int n){
+            this.nivelAcesso = n;
+        }
+    
+    public void setUsuario(String u){
+        this.usuario = u;
+    }
 
     /**
-     * Creates new form ServicosFrame
+     * Creates new form CancelarAgenFrame
      */
-    public ServicosFrame() {
+    public CancelarAgenFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -29,7 +40,6 @@ public class ServicosFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Serviços");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,20 +72,20 @@ public class ServicosFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ServicosFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelarAgenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ServicosFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelarAgenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ServicosFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelarAgenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ServicosFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelarAgenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ServicosFrame().setVisible(true);
+                new CancelarAgenFrame().setVisible(true);
             }
         });
     }
