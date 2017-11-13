@@ -102,7 +102,8 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(true){ // verificação de login
+        Controle acao = new Controle();
+        if(acao.login(jTextField1.getText(), jPasswordField1.getPassword().toString())){ // verificação de login
             HomeFrame home = new HomeFrame();
             String us = jTextField1.getText();
             home.setUsuario(us);
