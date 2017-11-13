@@ -28,7 +28,7 @@ public class Controle {
     }
     
     public boolean login(String _usuario, String _senha){
-        for(int i = 0; i < usuarios.size(); i+=8){
+        for(int i = 0; i < usuarios.size(); i++){
             if( (_usuario.equals(usuarios.get(i).get_id())) && (_senha.equals(usuarios.get(i).get_senha())) ){
                 return true;
             }
