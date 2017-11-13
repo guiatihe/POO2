@@ -106,6 +106,7 @@ public class LoginFrame extends javax.swing.JFrame {
             HomeFrame home = new HomeFrame();
             String us = jTextField1.getText();
             home.setUsuario(us);
+            home.setNivel(1); // metodo que retorna nivel de acesso do usuario
             home.setVisible(true);
             dispose();
         }

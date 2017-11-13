@@ -12,9 +12,14 @@ package poo2salao;
 public class HomeFrame extends javax.swing.JFrame {
     
     private String usuario;
+    private int nivelAcesso;
     
     public void setUsuario(String u){
         this.usuario = u;
+    }
+    
+    public void setNivel(int n){
+        this.nivelAcesso = n;
     }
     
     /**
@@ -132,6 +137,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         UsuariosFrame usuarios = new UsuariosFrame();
+        usuarios.setUsuario(this.usuario);
+        usuarios.setNivel(this.nivelAcesso);
         usuarios.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
