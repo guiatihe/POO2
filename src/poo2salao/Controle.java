@@ -20,11 +20,10 @@ public class Controle {
         //String ad = "admin";
         //cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
         Arquivo arq = new Arquivo();
-        usuarios = arq.lerUsuarios("usuarios.txt");
-        clientes = arq.lerClientes("clientes.txt");
-        comandas = arq.lerComandas("comandas.txt");
-        agendas = arq.lerAgendas("agendas.txt");
-        
+        usuarios = arq.lerUsuarios("usuarios.bin");
+        clientes = arq.lerClientes("clientes.bin");
+        comandas = arq.lerComandas("comandas.bin");
+        agendas = arq.lerAgendas("agendas.bin");
         //System.out.println(clientes.get(0).getNome());
     }
     
@@ -243,9 +242,9 @@ public class Controle {
     public void sair(){
         // Por enquanto salva apenas os usuários
         Arquivo arq = new Arquivo();
-        arq.armUsuarios(usuarios, "usuarios.txt");
-        arq.armClientes(clientes, "clientes.txt");
-        arq.armComandas(comandas, "comandas.txt");
-        arq.armAgendas(agendas, "agendas.txt");
+        arq.armUsuarios(usuarios, "usuarios.bin");
+        arq.armClientes(clientes, "clientes.bin");
+        arq.armComandas(comandas, "comandas.bin");
+        arq.armAgendas(agendas, "agendas.bin");
     }
 }
