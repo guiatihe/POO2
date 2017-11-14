@@ -5,10 +5,8 @@
  */
 package poo2salao;
 
-import java.io.Serializable;
-
 /**
- *
+ * Classe com atributos de Proprietario (herda Usuario)
  * @author baroni
  */
 public class Proprietario extends Usuario implements Assalariado {

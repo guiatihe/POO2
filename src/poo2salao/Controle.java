@@ -23,7 +23,12 @@ public class Controle {
         comandas = arq.lerComandas("comandas.bin");
         agendas = arq.lerAgendas("agendas.bin");
     }
-    
+    /**
+     * Verifica credenciais (Login)
+     * @param _usuario
+     * @param _senha
+     * @return bool com resultado da checagem
+     */
     public boolean login(String _usuario, String _senha){
         for(int i = 0; i < usuarios.size(); i++){
             if( (_usuario.equals(usuarios.get(i).get_id())) && (_senha.equals(usuarios.get(i).get_senha())) ){
@@ -239,7 +244,6 @@ public class Controle {
         return false;
     }
     public void sair(){
-        // Por enquanto salva apenas os usuários
         Arquivo arq = new Arquivo();
         arq.armUsuarios(usuarios, "usuarios.bin");
         arq.armClientes(clientes, "clientes.bin");

@@ -8,8 +8,8 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 /**
- *
- * @author baroni
+ * Classe com atributos de Comanda
+ * @author Matheus Baroni
  */
 public class Comanda implements Serializable {
     private boolean status;

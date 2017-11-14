@@ -8,8 +8,8 @@ package poo2salao;
 import java.io.Serializable;
 
 /**
- *
- * @author baroni
+ * Classe com atributos de Cliente
+ * @author Matheus Baroni
  */
 public class Cliente implements Serializable {
     private String id; //CPF

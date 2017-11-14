@@ -6,7 +6,7 @@
 package poo2salao;
 
 /**
- *
+ * Classe com atributos de Atendente (herda Usuario)
  * @author baroni
  */
 public class Atendente extends Usuario implements Assalariado{

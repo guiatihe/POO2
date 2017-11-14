@@ -8,8 +8,8 @@ package poo2salao;
 import java.io.Serializable;
 
 /**
- *
- * @author baroni
+ * Classe com atributos de Usuario
+ * @author Matheus Baroni
  */
 public class Usuario implements Serializable {
     protected String id; // CPF

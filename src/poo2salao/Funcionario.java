@@ -6,8 +6,8 @@
 package poo2salao;
 
 /**
- *
- * @author Gustavo
+ * Classe com atributos de Funcionario (herda Usuario)
+ * @author Gustavo Batistic
  */
 public class Funcionario extends Usuario implements Assalariado{
     private float porcentagem;
