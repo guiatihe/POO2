@@ -9,8 +9,8 @@ package poo2salao;
  *
  * @author g.atihe
  */
-public class CriarComandaFrame extends javax.swing.JFrame {
- private String usuario;
+public class FecharComandaFrame extends javax.swing.JFrame {
+     private String usuario;
     private int nivelAcesso;
     
     public void setUsuario(String u){
@@ -21,9 +21,9 @@ public class CriarComandaFrame extends javax.swing.JFrame {
         this.nivelAcesso = n;
     }
     /**
-     * Creates new form CriarComandaFrame
+     * Creates new form FecharComandaFrame
      */
-    public CriarComandaFrame() {
+    public FecharComandaFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -45,11 +45,11 @@ public class CriarComandaFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Criar comanda");
+        jLabel1.setText("Fechar comanda");
 
         jLabel2.setText("CPF do Cliente:");
 
-        jButton1.setText("Fechar comanda");
+        jButton1.setText("Criar comanda");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -132,20 +132,20 @@ public class CriarComandaFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FecharComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FecharComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FecharComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CriarComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FecharComandaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CriarComandaFrame().setVisible(true);
+                new FecharComandaFrame().setVisible(true);
             }
         });
     }

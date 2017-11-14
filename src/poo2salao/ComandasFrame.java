@@ -67,12 +67,32 @@ public class ComandasFrame extends javax.swing.JFrame {
         });
 
         jButton3.setText("Remover item");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Listar itens");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Fechar comanda");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Comandas abertas");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Sair");
 
@@ -126,16 +146,52 @@ public class ComandasFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        CriarComandaFrame servicos = new CriarComandaFrame();
-        servicos.setUsuario(this.usuario);
-        servicos.setNivel(this.nivelAcesso);
-        servicos.setVisible(true);
+        CriarComandaFrame criarcomanda = new CriarComandaFrame();
+        criarcomanda.setUsuario(this.usuario);
+        criarcomanda.setNivel(this.nivelAcesso);
+        criarcomanda.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        AdicionarItemComandaFrame additemcomanda = new AdicionarItemComandaFrame();
+        additemcomanda.setUsuario(this.usuario);
+        additemcomanda.setNivel(this.nivelAcesso);
+        additemcomanda.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        RemoverItemComandaFrame rmvitemcomanda = new RemoverItemComandaFrame();
+        rmvitemcomanda.setUsuario(this.usuario);
+        rmvitemcomanda.setNivel(this.nivelAcesso);
+        rmvitemcomanda.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ListarItemComandaFrame rmvitemcomanda = new ListarItemComandaFrame();
+        rmvitemcomanda.setUsuario(this.usuario);
+        rmvitemcomanda.setNivel(this.nivelAcesso);
+        rmvitemcomanda.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        FecharComandaFrame fecharcomanda = new FecharComandaFrame();
+        fecharcomanda.setUsuario(this.usuario);
+        fecharcomanda.setNivel(this.nivelAcesso);
+        fecharcomanda.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        ListarComandaFrame listarcomandas = new ListarComandaFrame();
+        listarcomandas.setUsuario(this.usuario);
+        listarcomandas.setNivel(this.nivelAcesso);
+        listarcomandas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
