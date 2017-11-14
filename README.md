@@ -16,6 +16,9 @@ Objetivo - O sistema a ser desenvolvido no decorrer da disciplina SI400 será fe
 
 Requisitos - Cadastramento de clientes, prestadores de serviço e serviços prestados. Além disso, é necessário que o sistema seja capaz de realizar o agendamento de clientes, gerenciar a agenda dos prestadores de serviços e controlar comanda de clientes.
 
+Usuario: adm
+Senha: adm
+
 <h2> Classes </h2>
   <ul> 
     <li> Comanda </li>
