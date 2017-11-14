@@ -51,6 +51,10 @@ public class Servico implements Serializable{
         return idFuncionario;
     }
     
+    public String getCliente(){
+        return this.cpf_cliente;
+    }
+    
     public int get_dia(){
         return dia;
     }

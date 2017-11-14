@@ -111,23 +111,23 @@ public class VerificarDispFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7h", null, null, null},
-                {"8h", null, null, null},
-                {"9h", null, null, null},
-                {"10h", null, null, null},
-                {"11h", null, null, null},
-                {"12h", null, null, null},
-                {"13h", null, null, null},
-                {"14h", null, null, null},
-                {"15h", null, null, null},
-                {"16h", null, null, null},
-                {"17h", null, null, null},
-                {"18h", null, null, null},
-                {"19h", null, null, null},
-                {"20h", null, null, null},
-                {"21h", null, null, null},
-                {"22h", null, null, null},
-                {"23h", null, null, null}
+                {"7", null, null, null},
+                {"8", null, null, null},
+                {"9", null, null, null},
+                {"10", null, null, null},
+                {"11", null, null, null},
+                {"12", null, null, null},
+                {"13", null, null, null},
+                {"14", null, null, null},
+                {"15", null, null, null},
+                {"16", null, null, null},
+                {"17", null, null, null},
+                {"18", null, null, null},
+                {"19", null, null, null},
+                {"20", null, null, null},
+                {"21", null, null, null},
+                {"22", null, null, null},
+                {"23", null, null, null}
             },
             new String [] {
                 "Horário", "Cliente", "ID do Serviço", "Disponível"
@@ -137,7 +137,7 @@ public class VerificarDispFrame extends javax.swing.JFrame {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -263,7 +263,11 @@ public class VerificarDispFrame extends javax.swing.JFrame {
         servicos = acao.exibirAgenda(jTextField1.getText(), Integer.parseInt(jComboBox3.getSelectedItem().toString()), Integer.parseInt(jComboBox4.getSelectedItem().toString()), Integer.parseInt(jTextField6.getText()));
         for(int i=0;i<17;i++){
             for(int j=0;j<servicos.size();j++){
-                
+                if(jTable1.getValueAt(i, 0).equals(servicos.get(j).get_hora())){
+                    jTable1.setValueAt(servicos.get(j).getCliente(), i, 1);
+                    jTable1.setValueAt(servicos.get(j).get_codigo(), i, 2);
+                    jTable1.setValueAt(true, i, 3);
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
