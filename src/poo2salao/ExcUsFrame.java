@@ -208,6 +208,12 @@ public class ExcUsFrame extends javax.swing.JFrame {
         else{
             acao.excluirUsuario(acao.getUsuarios().get(index).get_id());
         }
+        acao.sair();
+        UsuariosFrame usuarios = new UsuariosFrame();
+        usuarios.setUsuario(this.usuario);
+        usuarios.setNivel(this.nivelAcesso);
+        usuarios.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

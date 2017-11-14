@@ -10,22 +10,49 @@ package poo2salao;
  * @author edson
  */
 public class ListarClientesFrame extends javax.swing.JFrame {
+    
+    private int index;
     private String usuario;
-            private int nivelAcesso;
+    private int nivelAcesso;
     
-            public void setUsuario(String u){
-                this.usuario = u;
-           }
+    public void setUsuario(String u){
+        this.usuario = u;
+    }
+
+    public void setNivel(int n){
+        this.nivelAcesso = n;
+    }
     
-            public void setNivel(int n){
-                this.nivelAcesso = n;
+    public void refresh(){
+        Controle acao = new Controle();
+        if("nome".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getClientes().get(index).getNome() );
         }
+        else if("cpf".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getClientes().get(index).getCPF() );
+        }
+        else if("fone".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getClientes().get(index).getTelefone());
+        }
+        else if("endereço".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getClientes().get(index).getEndereco());
+        }
+        else if("email".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(acao.getClientes().get(index).getEmail());
+        }
+        else if("sexo".equals(jComboBox1.getSelectedItem())){
+            jLabel2.setText(Character.toString(acao.getClientes().get(index).getSexo()));
+        }
+    }
     /**
      * Creates new form ListarClientes
      */
     public ListarClientesFrame() {
-         initComponents();
+        initComponents();
         this.setLocationRelativeTo(null);
+        this.index = 0;
+        Controle acao = new Controle();
+        jLabel2.setText(acao.getClientes().get(index).getNome());
     }
 
     /**
@@ -56,8 +83,18 @@ public class ListarClientesFrame extends javax.swing.JFrame {
         });
 
         jButton1.setText(">");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +151,7 @@ public class ListarClientesFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        this.refresh();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -124,6 +161,21 @@ public class ListarClientesFrame extends javax.swing.JFrame {
         cliente.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Controle c = new Controle();
+        if(c.getClientes().size() > (this.index+1)) {
+            this.index++;
+            this.refresh();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if((this.index-1) >= 0) {
+            this.index--;
+            this.refresh();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
