@@ -7,8 +7,8 @@ package poo2salao;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- *
- * @author Gustavo
+ * Controlador (MVC)
+ * @author Gustavo batistic
  */
 public class Controle {
     private ArrayList<Usuario> usuarios;
@@ -17,14 +17,11 @@ public class Controle {
     private ArrayList<Agenda> agendas;
     
     public Controle(){
-        //String ad = "admin";
-        //cadastrarProprietario(ad,ad,ad,0,ad,ad,0);
         Arquivo arq = new Arquivo();
         usuarios = arq.lerUsuarios("usuarios.bin");
         clientes = arq.lerClientes("clientes.bin");
         comandas = arq.lerComandas("comandas.bin");
         agendas = arq.lerAgendas("agendas.bin");
-        //System.out.println(clientes.get(0).getNome());
     }
     
     public boolean login(String _usuario, String _senha){

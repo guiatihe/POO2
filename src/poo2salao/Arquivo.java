@@ -8,15 +8,16 @@ package poo2salao;
 import java.io.*;
 import java.util.ArrayList;
 /**
- *
- * @author baroni
+ * Manipulador de arquivos para a persistnecia de objetos
+ * @author Matheus Baroni
  */
 public class Arquivo {
-    //private static String path;
-    public Arquivo() {
-        //Arquivo.path = nome+".txt";
-    }
-    
+
+    /**
+     * Leitura dos Objetos tipo Usuario
+     * @param path - caminho do arquivo
+     * @return ArrayList contendo os objetos deserializados
+     */
     public ArrayList lerUsuarios(String path) {
         try{
             FileInputStream fis = new FileInputStream(path);
@@ -29,7 +30,11 @@ public class Arquivo {
             return new ArrayList();
         }
     }
-    
+    /**
+     * Leitura dos Objetos tipo Cliente
+     * @param path - caminho do arquivo
+     * @return ArrayList contendo os objetos deserializados
+     */
     public ArrayList lerClientes(String path) {
         try{
             FileInputStream fis = new FileInputStream(path);
@@ -42,7 +47,11 @@ public class Arquivo {
             return new ArrayList();
         }
     }
-    
+    /**
+     * Leitura dos Objetos tipo Comanda
+     * @param path - caminho do arquivo
+     * @return ArrayList contendo os objetos deserializados
+     */
     public ArrayList lerComandas(String path) {
         try{
             FileInputStream fis = new FileInputStream(path);
@@ -55,7 +64,11 @@ public class Arquivo {
             return new ArrayList();
         }
     }
-    
+    /**
+     * Leitura dos Objetos tipo Agenda
+     * @param path - caminho do arquivo
+     * @return ArrayList contendo os objetos deserializados
+     */
     public ArrayList lerAgendas(String path) {
         try{
             FileInputStream fis = new FileInputStream(path);
@@ -68,7 +81,11 @@ public class Arquivo {
             return new ArrayList();
         }
     }
-
+    /**
+     * Armazenamento dos Objetos Serializados tipo Usuario
+     * @param lista - Lista de Objetos a ser gravada
+     * @param path - Caminho do arquivo
+     */
     void armUsuarios(ArrayList<Usuario> lista, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
@@ -79,7 +96,11 @@ public class Arquivo {
             System.out.println("Erro ao aramzenar arquivo!!");
         } 
     }
-
+    /**
+     * Armazenamento dos Objetos Serializados tipo Cliente
+     * @param lista - Lista de Objetos a ser gravada
+     * @param path - Caminho do arquivo
+     */
     void armClientes(ArrayList<Cliente> lista, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
@@ -90,7 +111,11 @@ public class Arquivo {
             System.out.println("Erro ao aramzenar arquivo!!");
         } 
     }
-
+    /**
+     * Armazenamento dos Objetos Serializados tipo Comanda
+     * @param lista - Lista de Objetos a ser gravada
+     * @param path - Caminho do arquivo
+     */
     void armComandas(ArrayList<Comanda> lista, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
@@ -101,7 +126,11 @@ public class Arquivo {
             System.out.println("Erro ao aramzenar arquivo!!");
         } 
     }
-
+    /**
+     * Armazenamento dos Objetos Serializados tipo Agenda
+     * @param lista - Lista de Objetos a ser gravada
+     * @param path - Caminho do arquivo
+     */
     void armAgendas(ArrayList<Agenda> lista, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
