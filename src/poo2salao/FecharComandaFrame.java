@@ -47,9 +47,9 @@ public class FecharComandaFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Fechar comanda");
 
-        jLabel2.setText("CPF do Cliente:");
+        jLabel2.setText("ID da Comanda:");
 
-        jButton1.setText("Criar comanda");
+        jButton1.setText("Fechar comanda");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -82,7 +82,7 @@ public class FecharComandaFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +104,13 @@ public class FecharComandaFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Controle acao = new Controle();
+        acao.fecharComanda(Long.parseLong(jTextField1.getText()));
+        ComandasFrame comanda = new ComandasFrame();
+        comanda.setUsuario(this.usuario);
+        comanda.setNivel(this.nivelAcesso);
+        comanda.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

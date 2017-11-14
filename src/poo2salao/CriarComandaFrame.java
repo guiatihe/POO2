@@ -49,7 +49,7 @@ public class CriarComandaFrame extends javax.swing.JFrame {
 
         jLabel2.setText("CPF do Cliente:");
 
-        jButton1.setText("Fechar comanda");
+        jButton1.setText("Criar comanda");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -104,7 +104,13 @@ public class CriarComandaFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Controle acao = new Controle();
+        acao.adicionarComanda(jTextField1.getText());
+        ComandasFrame comanda = new ComandasFrame();
+        comanda.setUsuario(this.usuario);
+        comanda.setNivel(this.nivelAcesso);
+        comanda.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

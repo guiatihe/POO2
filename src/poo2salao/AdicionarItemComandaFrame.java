@@ -68,6 +68,11 @@ public class AdicionarItemComandaFrame extends javax.swing.JFrame {
         jLabel5.setText("Valor:");
 
         jButton1.setText("Adicionar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +156,16 @@ public class AdicionarItemComandaFrame extends javax.swing.JFrame {
         voltar.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Controle acao = new Controle();
+        acao.adicionarItemComanda(Long.parseLong(jTextField1.getText()), jTextField2.getText(), Integer.parseInt(jTextField3.getText()), Double.parseDouble(jTextField4.getText()));
+        ComandasFrame voltar = new ComandasFrame();
+        voltar.setUsuario(this.usuario);
+        voltar.setNivel(this.nivelAcesso);
+        voltar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
