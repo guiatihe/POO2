@@ -238,7 +238,7 @@ public class AgendarFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Controle acao = new Controle();//              dia   mes    ano    hora
+        Controle acao = new Controle();
         acao.adicionarServico(jTextField2.getText(), Integer.parseInt(jComboBox3.getSelectedItem().toString()), Integer.parseInt(jComboBox4.getSelectedItem().toString()), Integer.parseInt(jTextField6.getText()), Integer.parseInt(jComboBox3.getSelectedItem().toString()), jTextField1.getText(), jTextField5.getText());
         ServFrame servicos = new ServFrame();
         servicos.setUsuario(this.usuario);
